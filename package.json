@@ -1,6 +1,6 @@
 {
   "name": "lucide-mithril",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple and beautiful icon library for Mithril.js, based on the amazing Lucide icon set.",
   "license": "MIT",
   "author": "carlos-sweb",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/lucide-mithril.git"
+    "url": "https://github.com/carlos-sweb/lucide-mithril.git"
   },
   "keywords": [
     "mithril",
