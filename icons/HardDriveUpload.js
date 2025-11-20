@@ -1,5 +1,5 @@
 import _attrs from '../default_attrs.js'
 import m from 'mithril'
 export default {
-  view:(vnode)=>m('svg',{__proto__:Object.assign({},_attrs,vnode.attrs)},m.trust('<path d="m16 6-4-4-4 4" /><path d="M12 2v8" /><rect w="undefined" h="undefined" x="2" y="14" r="undefined" /><path d="M6 18h.01" /><path d="M10 18h.01" />'))  
+  view:(vnode)=>m('svg',{__proto__:Object.assign({},_attrs,vnode.attrs)},m.trust('<path d="m16 6-4-4-4 4" /><path d="M12 2v8" /><rect width="20" height="8" x="2" y="14" rx="2" /><path d="M6 18h.01" /><path d="M10 18h.01" />'))  
 }

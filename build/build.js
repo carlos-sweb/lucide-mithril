@@ -9,12 +9,13 @@ for(const name of names ){
    if( Array.isArray(sources[name])){
       let svgPath = '';   
    for( const path of sources[name] ){
-      svgPath += `<${path[0]} `
-      if( isObject(path[1])){
-         for( const [a,v] in path[1]){
-            svgPath +=`${a}="${path[1][a]}" `
-         }
-      }
+      const tag = path[0];
+      svgPath += `<${tag} `
+
+      Object.entries(path[1]).forEach(([key,vl])=>{
+         svgPath +=`${key}="${vl}" `
+      })
+   
       svgPath += `/>`      
    }
 

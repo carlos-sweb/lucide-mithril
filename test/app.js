@@ -1,6 +1,6 @@
 import m from "mithril"
 
-import AArrowDown from "../icons/AArrowDown.js"
+import Users from "../icons/Users.js"
 /*
 m.mount(document.body,{
   view:()=>m(AArrowDown,{
@@ -20,9 +20,9 @@ const two = document.getElementById("two");
 
 m.render( one ,
   m(
-      AArrowDown,{width:"64",height:"64",stroke:"#d4d4d4"}
+      Users,{width:"64",height:"64",stroke:"#d4d4d4"}
 ))
 m.render( two ,
   m(
-      AArrowDown,{width:"64",height:"64",stroke:"#d4d4d4"}
+      Users,{width:"64",height:"64",stroke:"#d4d4d4"}
 ))
