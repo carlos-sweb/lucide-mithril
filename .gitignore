@@ -1,0 +1,11 @@
+# Node.js
+node_modules/
+bun.lock
+
+# Editor/OS specific
+.DS_Store
+*.log
+
+# Build artifacts (if any, though icons/ is committed)
+# For example, if there were a 'dist' folder for a compiled bundle:
+# dist/

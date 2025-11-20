@@ -1,0 +1,5 @@
+import _attrs from '../default_attrs.js'
+import m from 'mithril'
+export default {
+  view:(vnode)=>m('svg',{__proto__:Object.assign({},_attrs,vnode.attrs)},m.trust('<path d="M10 20h4" /><path d="M12 16v6" /><path d="M17 2h4v4" /><path d="m21 2-5.46 5.46" /><circle c="undefined" c="undefined" r="5" />'))  
+}
