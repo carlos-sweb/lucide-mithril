@@ -20,9 +20,9 @@ const two = document.getElementById("two");
 
 m.render( one ,
   m(
-      Users,{width:"64",height:"64",stroke:"#d4d4d4"}
+      Users,{size:64,stroke:"#d4d4d4"}
 ))
 m.render( two ,
   m(
-      Users,{width:"64",height:"64",stroke:"#d4d4d4"}
+      Users,{size:100,stroke:"#d4d4d4"}
 ))

@@ -1,5 +1,5 @@
 import _attrs from '../default_attrs.js'
 import m from 'mithril'
 export default {
-  view:(vnode)=>m('svg',{__proto__:Object.assign({},_attrs,vnode.attrs)},m.trust('<path d="M12 19h.01" /><path d="M12 3h.01" /><path d="M16 19h.01" /><path d="M16 3h.01" /><path d="M2 13h.01" /><path d="M2 17v4.286a.71.71 0 0 0 1.212.502l2.202-2.202A2 2 0 0 1 6.828 19H8" /><path d="M2 5a2 2 0 0 1 2-2" /><path d="M2 9h.01" /><path d="M20 3a2 2 0 0 1 2 2" /><path d="M22 13h.01" /><path d="M22 17a2 2 0 0 1-2 2" /><path d="M22 9h.01" /><path d="M8 3h.01" />'))  
+  view:(vnode)=>m('svg',{ __proto__ : Object.assign( {} , _attrs(vnode.attrs ? vnode.attrs.size : 24 ) , vnode.attrs || {} )}, m.trust('<path d="M12 19h.01" /><path d="M12 3h.01" /><path d="M16 19h.01" /><path d="M16 3h.01" /><path d="M2 13h.01" /><path d="M2 17v4.286a.71.71 0 0 0 1.212.502l2.202-2.202A2 2 0 0 1 6.828 19H8" /><path d="M2 5a2 2 0 0 1 2-2" /><path d="M2 9h.01" /><path d="M20 3a2 2 0 0 1 2 2" /><path d="M22 13h.01" /><path d="M22 17a2 2 0 0 1-2 2" /><path d="M22 9h.01" /><path d="M8 3h.01" />'))  
 }

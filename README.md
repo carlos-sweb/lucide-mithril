@@ -27,7 +27,9 @@ const MyComponent = {
     m('h1', 'Using Lucide Icons'),
     
     // Basic usage
-    m(Activity),
+    m(Activity,{
+      size:48
+    }),
 
     // Customizing attributes
     m(Camera, {
