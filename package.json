@@ -1,15 +1,19 @@
 {
   "name": "lucide-mithril",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A simple and beautiful icon library for Mithril.js, based on the amazing Lucide icon set.",
   "license": "MIT",
   "author": "carlos-sweb",
   "type": "module",
   "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "icons/",
+    "icons/*.d.ts",
     "default_attrs.js",
+    "default_attrs.d.ts",
     "index.js",
+    "index.d.ts",
     "README.md"
   ],
   "repository": {
@@ -32,6 +36,8 @@
     "mithril": "^2.3.8"
   },
   "devDependencies": {
-    "lucide": "^1.25.0"
+    "@types/mithril": "^2.2.8",
+    "lucide": "^1.25.0",
+    "typescript": "^7.0.2"
   }
 }
