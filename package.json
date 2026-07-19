@@ -1,6 +1,6 @@
 {
   "name": "lucide-mithril",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple and beautiful icon library for Mithril.js, based on the amazing Lucide icon set.",
   "license": "MIT",
   "author": "carlos-sweb",
@@ -32,7 +32,7 @@
     "mithril": "^2.3.8"
   },
   "devDependencies": {
-    "lucide": "^1.8.0",
-    "pp-is": "^1.2.7"
+    "lucide": "^1.25.0",
+    "pp-is": "^1.3.0"
   }
 }
