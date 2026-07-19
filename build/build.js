@@ -1,9 +1,7 @@
-import  sources from 'lucide'
-import {isObject,isFunction} from 'pp-is'
+import sources from 'lucide'
+
 const names = Object.keys(sources);
-
-//var i = 0;
-
+const generatedIcons = [];
 
 for(const name of names ){            
    if( Array.isArray(sources[name])){
@@ -27,7 +25,18 @@ export default {
   view:(vnode)=>m('svg',{ __proto__ : Object.assign( {} , _attrs(vnode.attrs ? vnode.attrs.size : 24 ) , vnode.attrs || {} )}, m.trust('${svgPath}'))  
 }`
 )
+   generatedIcons.push(name);
 }
-   //if(i == 0) break
 }
+
+generatedIcons.sort();
+
+const indexContent = generatedIcons
+  .map(name => `export { default as ${name} } from './icons/${name}.js';`)
+  .join('\n') + '\n';
+
+await Bun.write('index.js', indexContent);
+
+console.log(`✓ ${generatedIcons.length} iconos generados en icons/`);
+console.log(`✓ index.js actualizado con ${generatedIcons.length} exports`);
 
