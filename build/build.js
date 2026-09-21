@@ -64,14 +64,13 @@ export default {
 
   await Bun.write('icons/' + name + '.d.ts', iconDts(name));
 
-  // mithril-lynx / Lynx: no m.trust — SVG children go in the `content` attr.
+  // mithril-lynx / Lynx: full <svg> in content; size via outer style object.
   await Bun.write(
     'icons-lynx/' + name + '.js',
 `import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
-export default {
-   view:(vnode)=>m('svg',{ ..._attrs(vnode.attrs?.size ?? 24), ...(vnode.attrs || {}), content:'${safeSvgPath}' })
-}`
+import { lynxIcon } from '../lynx_svg.js'
+export default lynxIcon('${safeSvgPath}', _attrs, 24)
+`
   );
 
   await Bun.write('icons-lynx/' + name + '.d.ts', iconDts(name));

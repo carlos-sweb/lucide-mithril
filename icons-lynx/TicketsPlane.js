@@ -1,5 +1,3 @@
 import _attrs from '../default_attrs.js'
-import m from 'mithril-runtime'
-export default {
-   view:(vnode)=>m('svg',{ ..._attrs(vnode.attrs?.size ?? 24), ...(vnode.attrs || {}), content:'<path d="M10.5 17h1.227a2 2 0 0 0 1.345-.52L18 12" /><path d="m12 13.5 3.794.506" /><path d="m3.173 8.18 11-5a2 2 0 0 1 2.647.993L18.56 8" /><path d="M6 10V8" /><path d="M6 14v1" /><path d="M6 19v2" /><rect x="2" y="8" width="20" height="13" rx="2" />' })
-}
+import { lynxIcon } from '../lynx_svg.js'
+export default lynxIcon('<path d="M10.5 17h1.227a2 2 0 0 0 1.345-.52L18 12" /><path d="m12 13.5 3.794.506" /><path d="m3.173 8.18 11-5a2 2 0 0 1 2.647.993L18.56 8" /><path d="M6 10V8" /><path d="M6 14v1" /><path d="M6 19v2" /><rect x="2" y="8" width="20" height="13" rx="2" />', _attrs, 24)

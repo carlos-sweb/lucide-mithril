@@ -71,9 +71,9 @@ Default attributes are:
 
 ## mithril-lynx (Lynx)
 
-[mithril-lynx](https://www.npmjs.com/package/mithril-lynx) does not support `m.trust`. On Lynx, SVG markup is passed through the native `<svg>` `content` attribute instead.
+[mithril-lynx](https://www.npmjs.com/package/mithril-lynx) does not support `m.trust`. On Lynx, SVG must follow the [native `<svg>` contract](https://lynxjs.org/api/elements/built-in/svg): `content` is a **full** `<svg>...</svg>` document string, and display size is set on the outer element via a `style` **object** (`{ width: "Npx", height: "Npx" }`), not CSS text strings.
 
-Use the parallel `icons-lynx/` components, which import `mithril-runtime` and set `content`:
+Use the parallel `icons-lynx/` components (built with `lynxIcon` in `lynx_svg.js`):
 
 ```javascript
 import m from 'mithril-runtime';
@@ -101,7 +101,7 @@ The web entry (`lucide-mithril` / `icons/*`) is unchanged and still uses `m.trus
 The icons are generated automatically by the `build/build.js` script. This script reads the icon data from the `lucide` package and creates:
 
 - `icons/` — Mithril web components (`m.trust`)
-- `icons-lynx/` — mithril-lynx components (`content` attribute)
+- `icons-lynx/` — mithril-lynx components (full SVG in `content` + size via `style`)
 
 This keeps the library up-to-date with the latest changes from Lucide on both targets.
 

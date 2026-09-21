@@ -1,6 +1,6 @@
 {
   "name": "lucide-mithril",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A simple and beautiful icon library for Mithril.js, based on the amazing Lucide icon set.",
   "license": "MIT",
   "author": "carlos-sweb",
@@ -40,6 +40,8 @@
     "icons-lynx/",
     "default_attrs.js",
     "default_attrs.d.ts",
+    "lynx_svg.js",
+    "lynx_svg.d.ts",
     "index.js",
     "index.d.ts",
     "README.md",
