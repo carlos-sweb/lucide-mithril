@@ -1,0 +1,5 @@
+import _attrs from '../default_attrs.js'
+import m from 'mithril-runtime'
+export default {
+   view:(vnode)=>m('svg',{ ..._attrs(vnode.attrs?.size ?? 24), ...(vnode.attrs || {}), content:'<path d="m13.5 8.5-5 5" /><path d="m8.5 8.5 5 5" /><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />' })
+}

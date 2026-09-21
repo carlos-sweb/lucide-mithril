@@ -1,6 +1,6 @@
 {
   "name": "lucide-mithril",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "A simple and beautiful icon library for Mithril.js, based on the amazing Lucide icon set.",
   "license": "MIT",
   "author": "carlos-sweb",
@@ -18,6 +18,10 @@
       "types": "./icons/*.d.ts",
       "import": "./icons/*.js"
     },
+    "./icons-lynx/*": {
+      "types": "./icons-lynx/*.d.ts",
+      "import": "./icons-lynx/*.js"
+    },
     "./default_attrs": {
       "types": "./default_attrs.d.ts",
       "import": "./default_attrs.js"
@@ -25,12 +29,13 @@
   },
   "files": [
     "icons/",
-    "icons/*.d.ts",
+    "icons-lynx/",
     "default_attrs.js",
     "default_attrs.d.ts",
     "index.js",
     "index.d.ts",
-    "README.md"
+    "README.md",
+    "README-es.md"
   ],
   "repository": {
     "type": "git",
@@ -39,6 +44,8 @@
   "keywords": [
     "lucide-mithril",
     "mithril",
+    "mithril-lynx",
+    "lynx",
     "lucide",
     "icons",
     "svg",
@@ -49,11 +56,17 @@
     "build": "bun build/build.js"
   },
   "peerDependencies": {
-    "mithril": "^2.3.8"
+    "mithril": "^2.3.8",
+    "mithril-runtime": "^1.1.0"
+  },
+  "peerDependenciesMeta": {
+    "mithril-runtime": {
+      "optional": true
+    }
   },
   "devDependencies": {
-    "@types/mithril": "^2.2.8",
-    "lucide": "^1.25.0",
+    "@types/mithril": "^2.2.9",
+    "lucide": "^1.47.0",
     "typescript": "^7.0.2"
   }
 }

@@ -1,0 +1,5 @@
+import _attrs from '../default_attrs.js'
+import m from 'mithril'
+export default {
+   view:(vnode)=>m('svg',{ ..._attrs(vnode.attrs?.size ?? 24), ...(vnode.attrs || {}) }, m.trust('<path d="M20.4 20.4a2 2 0 01-1.4.6H5a2 2 0 01-2-2V5a2 2 0 01.59-1.41" /><path d="M21 15.3V5a2 2 0 00-2-2H8.7" /><path d="M22 22 2 2" />'))
+}

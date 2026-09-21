@@ -69,9 +69,41 @@ Default attributes are:
 - `stroke-linecap="round"`
 - `stroke-linejoin="round"`
 
+## mithril-lynx (Lynx)
+
+[mithril-lynx](https://www.npmjs.com/package/mithril-lynx) does not support `m.trust`. On Lynx, SVG markup is passed through the native `<svg>` `content` attribute instead.
+
+Use the parallel `icons-lynx/` components, which import `mithril-runtime` and set `content`:
+
+```javascript
+import m from 'mithril-runtime';
+import Home from 'lucide-mithril/icons-lynx/Home.js';
+import Camera from 'lucide-mithril/icons-lynx/Camera.js';
+
+const MyComponent = {
+  view: () => m('view', [
+    m(Home, { size: 48 }),
+    m(Camera, {
+      size: 32,
+      stroke: 'red',
+      'stroke-width': 1.5,
+    }),
+  ]),
+};
+```
+
+The web entry (`lucide-mithril` / `icons/*`) is unchanged and still uses `m.trust`.
+
+`mithril-runtime` is an optional peer dependency: install it when you use `icons-lynx/*`.
+
 ## Build Process
 
-The icons are generated automatically by the `build/build.js` script. This script reads the icon data from the `lucide` package and creates a corresponding Mithril component for each icon in the `icons/` directory. This ensures the library stays up-to-date with the latest changes from Lucide.
+The icons are generated automatically by the `build/build.js` script. This script reads the icon data from the `lucide` package and creates:
+
+- `icons/` — Mithril web components (`m.trust`)
+- `icons-lynx/` — mithril-lynx components (`content` attribute)
+
+This keeps the library up-to-date with the latest changes from Lucide on both targets.
 
 ## License
 
