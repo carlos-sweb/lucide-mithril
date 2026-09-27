@@ -4,6 +4,15 @@ function escapeAttr(value) {
   return String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
 }
 
+// Only attributes that change how the icon is drawn go INSIDE the `content` <svg>.
+// Everything else (events, id, class, data-*, key, flatten, ...) stays on the outer
+// Lynx element, where Lynx can actually see it.
+const DESIGN_ATTRS = /^(stroke|fill|clip|marker|stop|flood|lighting)(-[a-z-]+)?$|^(color|opacity|transform|viewBox|width|height|preserveAspectRatio|shape-rendering|vector-effect|display|visibility|overflow)$/
+
+function isDesignAttr(k, v) {
+  return DESIGN_ATTRS.test(k) && (typeof v !== 'function') && (typeof v !== 'object' || v === null)
+}
+
 export function mergeStyle(px, style) {
   const base = { width: `${px}px`, height: `${px}px` }
   if (!style || typeof style === 'string') return base
@@ -22,8 +31,8 @@ export function lynxIcon(inner, defaultsFn, defaultSize = 24) {
       const outer = {}
       const svgProps = {}
       for (const [k, v] of Object.entries(rest)) {
-        if (k.startsWith('on') || k.startsWith('bind')) outer[k] = v
-        else svgProps[k] = v
+        if (isDesignAttr(k, v)) svgProps[k] = v
+        else outer[k] = v
       }
       const px = Number(size ?? svgProps.width ?? svgProps.height ?? defaultSize)
       const merged = { xmlns: 'http://www.w3.org/2000/svg', ...defaultsFn(px), ...svgProps }
